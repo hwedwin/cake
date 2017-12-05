@@ -1,20 +1,9 @@
-var { Client } = require("pg");
+const express = require("express");
+const mountRoutes = require("./routes");
 
-var conString = "postgres://admin:1234@localhost:5432/cake";
-const client = new Client(conString);
-client.connect();
-const query = {
-  name: "insert-data",
-  text: "insert into test (id, test) values ($1,$2)",
-  values: [1, "test-1"]
-};
-client
-  .query(query)
-  .then(res => {
-    console.log(res);
-    res.rows.forEach(row => {
-      console.log(row);
-    });
-    client.end();
-  })
-  .catch(e => console.log(e));
+const app = express();
+mountRoutes(app);
+app.get("/", (req, res) => {
+  res.send("home");
+});
+app.listen(3000);
