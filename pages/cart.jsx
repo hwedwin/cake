@@ -1,9 +1,8 @@
-var React = require("react");
-
+import React from "react";
 class Cart extends React.Component {
   render() {
     return <div>Hello, {this.props.cartName}</div>;
   }
 }
 
-module.exports = Cart;
+export default Cart;

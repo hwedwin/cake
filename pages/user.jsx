@@ -1,4 +1,4 @@
-var React = require("react");
+import React from "react";
 
 class User extends React.Component {
   render() {
@@ -6,4 +6,4 @@ class User extends React.Component {
   }
 }
 
-module.exports = User;
+export default User;

@@ -1,4 +1,4 @@
-var React = require("react");
+import React from "react";
 
 class Product extends React.Component {
   render() {
@@ -6,4 +6,4 @@ class Product extends React.Component {
   }
 }
 
-module.exports = Product;
+export default Product;
