@@ -10,6 +10,6 @@ router.get("/:id", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.send(response.rows[0]);
+    res.render("category", { categoryName: response.rows[0].categoryname });
   });
 });

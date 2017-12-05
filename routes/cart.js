@@ -10,6 +10,6 @@ router.get("/:id", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.send(response.rows[0]);
+    res.render("cart", { cartName: response.rows[0].cartname });
   });
 });

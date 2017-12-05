@@ -10,6 +10,6 @@ router.get("/:id", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.send(response.rows[0]);
+    res.render("user", { userName: response.rows[0].username });
   });
 });
